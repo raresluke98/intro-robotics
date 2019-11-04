@@ -24,13 +24,13 @@ void setup(){
 void loop(){
   potValueR = analogRead(potPinR);
   potValueG = analogRead(potPinG);
-  //potValueB = analogRead(potPinB);
+  potValueB = analogRead(potPinB);
   ledValueR = map(potValueR, 0, 1023, 0, 255);
-  ledValueG = map(potValueG, 0, 1023, 0, 255);
-  //ledValueB = map(potValueB, 0, 1023, 0, 255);
+  ledValueG = map(potValueG, 35, 1023, 0, 255);
+  ledValueB = map(potValueB, 0, 1023, 0, 255);
   analogWrite(ledPinR, ledValueR);
   analogWrite(ledPinG, ledValueG);
-  Serial.println(potValueR);
-  //analogWrite(ledPinB, ledValueB);
+  Serial.println(potValueG);
+  analogWrite(ledPinB, ledValueB);
   delay(1);
 }
